@@ -1,0 +1,49 @@
+MERGE [dbo].[Test] WITH (HOLDLOCK) 
+AS TARGET USING ( VALUES (NEWID(), 'Name test 1'))
+AS SOURCE (Id, Name) 
+ON TARGET.Name = SOURCE.Name  
+WHEN NOT MATCHED BY TARGET THEN 
+	INSERT (Id, Name) 
+	values(Source.Id, Source.Name) 
+WHEN MATCHED THEN 
+	UPDATE SET TARGET.Name = SOURCE.Name; 
+
+MERGE [dbo].[Test] WITH (HOLDLOCK) 
+AS TARGET USING ( VALUES (NEWID(), 'Name test 2'))
+AS SOURCE (Id, Name) 
+ON TARGET.Name = SOURCE.Name  
+WHEN NOT MATCHED BY TARGET THEN 
+	INSERT (Id, Name) 
+	values(Source.Id, Source.Name) 
+WHEN MATCHED THEN 
+	UPDATE SET TARGET.Name = SOURCE.Name; 
+
+MERGE [dbo].[Test] WITH (HOLDLOCK) 
+AS TARGET USING ( VALUES (NEWID(), 'Name test 3'))
+AS SOURCE (Id, Name) 
+ON TARGET.Name = SOURCE.Name  
+WHEN NOT MATCHED BY TARGET THEN 
+	INSERT (Id, Name) 
+	values(Source.Id, Source.Name) 
+WHEN MATCHED THEN 
+	UPDATE SET TARGET.Name = SOURCE.Name; 
+
+MERGE [dbo].[Test] WITH (HOLDLOCK) 
+AS TARGET USING ( VALUES (NEWID(), 'Name test 4'))
+AS SOURCE (Id, Name) 
+ON TARGET.Name = SOURCE.Name  
+WHEN NOT MATCHED BY TARGET THEN 
+	INSERT (Id, Name) 
+	values(Source.Id, Source.Name) 
+WHEN MATCHED THEN 
+	UPDATE SET TARGET.Name = SOURCE.Name; 
+
+MERGE [dbo].[Test] WITH (HOLDLOCK) 
+AS TARGET USING ( VALUES (NEWID(), 'Name test 5'))
+AS SOURCE (Id, Name) 
+ON TARGET.Name = SOURCE.Name  
+WHEN NOT MATCHED BY TARGET THEN 
+	INSERT (Id, Name) 
+	values(Source.Id, Source.Name) 
+WHEN MATCHED THEN 
+	UPDATE SET TARGET.Name = SOURCE.Name; 
